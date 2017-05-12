@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <h1>hi!</h1>
+
+    <input id="user-name" type="text">
+    <input id="submit" type="submit">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="cookies.js"></script>
+
+    <script>
+      var savedUsername = Cookies.get("name");
+
+      if (savedUsername) {
+        alert("hi " + savedUsername);
+      }
+
+      $("#submit").click(function() {
+        var username = $("#user-name").val();
+        Cookies.set("name", username);
+      });
+
+      // Cookies.set("name", "shirmung");
+      // Cookies.set("age", "8");
+      // alert(Cookies.get("name"));
+      // alert(Cookies.get("age"));
+    </script>
+  </body>
+</html>
